@@ -3,20 +3,15 @@ package com.trading_data_managment_app.controller;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-
 import java.util.Map;
-
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
 import com.trading_data_managment_app.dto.ForgotPasswordRequest;
 import com.trading_data_managment_app.dto.ResetPasswordRequest;
 import com.trading_data_managment_app.dto.UserDto;
 import com.trading_data_managment_app.dto.UserLoginRequest;
 import com.trading_data_managment_app.dto.UserRegisterRequest;
-import com.trading_data_managment_app.service.EmailService;
 import com.trading_data_managment_app.service.UserService;
 
 @Slf4j
@@ -35,7 +30,6 @@ public class PublicController {
 
 	@PostMapping("/register")
 	public ResponseEntity<UserDto> userRegister(@Valid @RequestBody UserRegisterRequest userRegisterRequest) {
-
 		log.info("PublicController register endpoint called for email: {}", userRegisterRequest.getEmail());
 		UserDto registeredUser = userService.register(userRegisterRequest);
 		log.info("PublicController user registered successfully: {}");
@@ -45,9 +39,7 @@ public class PublicController {
 	@PostMapping("/login")
 	public ResponseEntity<UserDto> userLogin(@Valid @RequestBody UserLoginRequest userLoginRequest) {
 		log.info("PublicController Login API called for email: {}", userLoginRequest.getEmail());
-
 		UserDto loggedInUser = userService.login(userLoginRequest);
-
 		log.info("Login successful for email: {}", userLoginRequest.getEmail());
 		return ResponseEntity.status(HttpStatus.OK).body(loggedInUser);
 	}

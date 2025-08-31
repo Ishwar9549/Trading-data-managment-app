@@ -5,6 +5,7 @@ import com.trading_data_managment_app.dto.UserLoginRequest;
 import com.trading_data_managment_app.dto.UserRegisterRequest;
 
 public interface UserService {
+	
 	UserDto login(UserLoginRequest userLoginRequest);
 
 	UserDto register(UserRegisterRequest userRegisterRequest);

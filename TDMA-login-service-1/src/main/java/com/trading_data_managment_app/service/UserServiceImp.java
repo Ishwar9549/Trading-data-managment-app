@@ -12,7 +12,6 @@ import com.trading_data_managment_app.entity.User;
 import com.trading_data_managment_app.exception.InvalidCredentialsException;
 import com.trading_data_managment_app.exception.ResourceNotFoundException;
 import com.trading_data_managment_app.repository.UserRepository;
-
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 
