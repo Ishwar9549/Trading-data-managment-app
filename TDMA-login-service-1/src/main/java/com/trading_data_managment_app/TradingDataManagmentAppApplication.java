@@ -14,4 +14,4 @@ public class TradingDataManagmentAppApplication {
 		log.info("Trading DataManagment AppApplication started....");
 		System.err.println("Trading DataManagment AppApplication started....");
 	}
-}
+}  
